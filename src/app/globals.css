@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-stroke;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base-900 text-ink-50 font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-lime/30 text-ink-50;
+  }
+
+  :focus-visible {
+    outline: 2px solid #cfeb86;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .bg-grid-fade {
+    background-image: radial-gradient(
+        circle at 18% -4%,
+        rgba(183, 217, 106, 0.12),
+        transparent 42%
+      ),
+      radial-gradient(circle at 88% 6%, rgba(216, 168, 83, 0.09), transparent 38%);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-wide2 text-lime;
+  }
+
+  .glass {
+    @apply bg-base-800/40 backdrop-blur-md border border-stroke;
+  }
+
+  .keycap-btn {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-key
+      px-6 py-3 font-body text-sm font-semibold tracking-wide
+      transition-transform duration-150 ease-out
+      active:translate-y-[2px];
+  }
+
+  .keycap-btn--primary {
+    @apply bg-lime text-base-950 shadow-keycap hover:bg-lime-bright;
+  }
+
+  .keycap-btn--ghost {
+    @apply glass text-ink-50 shadow-keycap-sm hover:border-lime/40 hover:text-lime-bright;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
