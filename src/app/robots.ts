@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://grain-keyboards.example.com/sitemap.xml",
+    sitemap: "https://grainkeyboard.netlify.app/sitemap.xml",
   };
 }
